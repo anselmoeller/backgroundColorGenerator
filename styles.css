@@ -1,0 +1,261 @@
+/*To use a diferent font-family - Roboto - by google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Roboto:wght@400;700&display=swap');
+
+/*main rules...*/
+:root{
+    --primaryColor:#f00;
+    --mainTxtColor:#0091ff;
+    --mainTextContentColor:#fff;
+    --darkBackgroundColor:#000;
+    --darkColorRGBA:rgba(0, 0, 0, 0.7);
+    --secondaryColorText:rgb(200, 200, 200);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    font-family:'Roboto', sans-serif;
+}
+
+/*header styles and navigation bar styles*/
+header{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    z-index: 2;
+}
+
+#headerBgColorEffect{
+    position: absolute;
+    top:0;
+    z-index: 1;
+    height: 70px;
+    width: 100%;
+    background-color: var(--darkBackgroundColor);
+    opacity: 0.1;
+}
+header span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 60%;
+    color: var(--darkBackgroundColor);
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 2;
+}
+header span a {
+    text-decoration: none;
+    color: inherit;
+}
+header nav{
+    width: 40%;
+}
+header nav ul{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+header nav ul li{
+    display: flex;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    color: var(--mainTextContentColor);
+    font-size: 17px;
+    text-shadow: 1px 1px 0.1px var(--darkBackgroundColor);
+}
+
+/*to indicate the current mode of colors choosed to random a color*/
+.choosedModeColor{
+    color: var(--mainTxtColor);
+}
+
+/*li:hover styles*/
+.simpleModeColor:hover,
+.hexModeColor:hover,
+.rgbModeColor:hover{
+    cursor: pointer;
+    color: var(--mainTxtColor);
+}
+
+/* main content styles*/
+main{
+    height: calc(100vh - 70px - 25px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contentAreabackground{
+    text-align: center;
+    background-color: var(--darkBackgroundColor);
+    color: var(--mainTextContentColor);
+    border-radius: 15px;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+.showActualColor{
+    color: var(--mainTxtColor);
+}
+.showActualColor:hover{
+    cursor:copy;
+}
+.mainInstrutionsArea{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 20%;
+}
+.mainInstrutionsArea h1{
+    color: red;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+.mainInstrutions{
+    text-align: center;
+    flex-wrap: wrap;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    color: var(--darkBackgroundColor);
+}
+.btnRandonColor, .btnCopyColor{
+    color: var(--darkBackgroundColor);
+    background-color: transparent;
+    border-radius: 7px;
+    padding: 5px 7px;
+    transition: all ease 0.4s;
+    margin-inline: 5px;
+}
+.btnRandonColor:hover, .btnCopyColor:hover{
+    cursor: pointer;
+    color: var(--mainTextContentColor);
+    background-color: var(--darkColorRGBA);
+}
+.btnLightColor, .btnLigthCopyColor{
+    color: var(--mainTextContentColor);
+    border-color: var(--mainTextContentColor);
+}
+.btnsArea{
+    display: flex;
+    padding-inline: 20px;
+}
+
+.copiedColorBtn{
+    color: var(--mainTextContentColor);
+    background-color: var(--darkBackgroundColor);
+}
+
+/*footer styles and rules*/
+#footerBgColorEffect{
+    position: absolute;
+    z-index: 1;
+    bottom:0;
+    height: 25px;
+    width: 100%;
+    background-color: var(--darkBackgroundColor);
+    opacity: 0.1;
+}
+footer{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 25px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+
+}
+
+.smallDarkColor{
+  color: var(--darkBackgroundColor);
+}
+.smallLightColor{
+    color: var(--mainTextContentColor);
+}
+
+
+/* media queries*/
+
+@media (max-width:580px){
+    .mainInstrutionsArea h1 {
+        font-size: 20px;
+    }
+    .btnsArea{
+        margin: 25px;
+    }
+    .mainInstrutions{
+        padding-inline: 20px;
+        font-size: 14px;
+    }
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: space-evenly;
+    }
+    header span, header nav ul{
+        margin: 0;
+    }
+    .textContentSpan {
+        font-size: 20px;
+    }
+}
+
+@media (max-width:430px){
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: space-evenly;
+    }
+    header span, header nav ul{
+        font-size: 18px;
+    }
+    .textContentSpan {
+        font-size: 18px;
+    }
+    .createdBy {
+        font-size: 10px;
+    }
+    .contentAreabackground{
+        padding: 7px 10px;
+    }
+}
+
+@media (max-width:350px){
+    .contentAreabackground{
+        display: none;
+        flex-direction: column;
+        padding: 12px 20px;
+        gap: 7px;
+    }
+}
+
+@media (min-width:1440px) and (max-width: 3000px){
+    header span, header nav ul{
+        font-size: 25px;
+    }
+    .textContentSpan {
+        font-size: 20px;
+    }
+    .createdBy {
+        font-size: 15px;
+    }
+    .textContentSpan {
+        font-size: 18px;
+    }
+}

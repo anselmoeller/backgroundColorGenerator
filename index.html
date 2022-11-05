@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Anselmo De Paula Eller">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/baseline_palette_white_24dp.png" type="image/gif">
+    <title>Color Flipper - By AnselmoEller</title>
+</head>
+<body>
+    <header>        
+        <span class="siteTitleColorFlipper" title="My name is Anselmo, wellcome to my site">
+           <a href="./index.html">Background-color generator</a>
+        </span>        
+        <nav>
+            <ul>
+                <li onclick="simpleSelected()" class="simpleModeColor" title="Select this mode to some simple colors.">Simple</li>
+                <li onclick="hexSelected()" class="hexModeColor" title="Select this mode to random hexadecimal colors.">Hex</li>
+                <li onclick="rgbSelected()" class="rgbModeColor" title="Select this mode to random RGB (Red Green Blue) colors. ">RGB</li>
+            </ul>
+        </nav>        
+    </header>
+    <div id="headerBgColorEffect"></div>
+    <main>
+        <div class="mainInstrutionsArea">
+            <h1>
+                Wellcome!
+            </h1>
+            <h3 class="mainInstrutions">
+                To get started, choose between simple, hex, or rgb options just above to change the background color. <br><br>Than click on "Change Color" button bellow.
+            </h3>
+        </div>
+        <div class="contentAreabackground hiddenStatus" hidden>
+            <!-- used  &nbsp to generate a simgle space line  -->
+            <span class="textContentSpan">Background Color: &nbsp</span> 
+            <span id="contentToCopy" class="showActualColor textContentSpan" title="Click to copy the content" onclick="copyContent()"></span>
+        </div>
+        <div class="btnsArea">
+            <button onclick="setRandonColor()" class="btnRandonColor">Change color</button>
+            <button onclick="copyContent()" class="btnCopyColor" hidden>Copy</button>
+        </div>
+    </main>
+    <footer>
+        <small class="createdBy smallDarkColor">Created by Anselmo De Paula Eller - All Right Reserved</small>
+    </footer>
+    <div id="footerBgColorEffect"></div>
+    <script src="scripts.js"></script>
+</body>
+</html>
